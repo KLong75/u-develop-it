@@ -21,14 +21,6 @@ const db = mysql.createConnection(
   },
 );
 
-/*
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Hello World'
-  });
-});
-*/
-
 // Get all candidates
 app.get('/api/candidates', (req, res) => {
   const sql = `SELECT * FROM candidates`;
@@ -44,7 +36,6 @@ app.get('/api/candidates', (req, res) => {
     });
   });
 });
-
 
 // Get a single candidate
 app.get('/api/candidate/:id', (req, res) => {
@@ -62,8 +53,6 @@ app.get('/api/candidate/:id', (req, res) => {
     });
   });
 });
-
-
 
 //Delete a candidate
 app.delete('/api/candidate/:id', (req, res) => {
@@ -109,10 +98,6 @@ app.post('/api/candidate', ({ body }, res) => {
     });
   });
 });
-
-
-
-
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
